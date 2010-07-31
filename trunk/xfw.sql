@@ -1,0 +1,12 @@
+
+CREATE TABLE `users` (
+  `userID` mediumint(8) unsigned NOT NULL auto_increment,
+  `username` varchar(50) NOT NULL default '',
+  `password` varchar(100) NOT NULL default '',
+  `email` varchar(150) NOT NULL default '',
+  `active` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`userID`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  KEY `active` (`active`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
