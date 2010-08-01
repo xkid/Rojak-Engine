@@ -1,5 +1,5 @@
-<p>- Add <a href="http://sourceforge.net/projects/phpmailer/"><strong>PHPMailer</strong></a> afterward.<br>
+- Add <a href="http://sourceforge.net/projects/phpmailer/"><strong>PHPMailer</strong></a> afterward.<br>
 - Redesign Template Layout<br>
 - Compile User Manual<br>
 - Compile Developer Manual<br>
-- </p>
+-
