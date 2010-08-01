@@ -4,7 +4,7 @@
 
 	// ****************  Default include  ****************
 	
-		// include XFW setting file
+		// include XiNix setting file
 		include('configuration.php');
     // include template engine
 		include_once('./includes/tbs_class.php');
