@@ -1,0 +1,1 @@
+<p>Add <a href="http://sourceforge.net/projects/phpmailer/"><strong>PHPMailer</strong></a> afterward.</p>
