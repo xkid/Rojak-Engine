@@ -6,21 +6,22 @@
 	
 		// include XFW setting file
 		include('configuration.php');
-    // include template engine
-		include_once('./includes/tbs_class.php');
+		// include template engine
+		include_once('./includes/template/tbs_class.php');
 		// include database engine
-		include('./adodb/adodb.inc.php');
+		include('./includes/adodb/adodb.inc.php');
 		// require user access class
-    require_once('./includes/access.class.php');
+		require_once('./includes/user/access.class.php');
 		
-    // Declare User access class
-    if (file_exists('configuration.php')){
-      $user = new flexibleAccess('', $settings);
-    }
+		// Declare User access class
+		if (file_exists('configuration.php')){
+		  $user = new flexibleAccess('', $settings);
+		}
+		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('./template/index.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('index.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
@@ -30,7 +31,7 @@
 		 /*
 		 
 		 $saveLink = 'save.php';
-		 $cssLink = './template/style.css';
+		 $cssLink = 'style.css';
 		 
 		 // Create database connection
 			 $db = NewADOConnection('mysql');
@@ -73,11 +74,11 @@
 	// **************  Write Your Code Here  **************
 	
 	// checks for configuration file, if none found loads installation page
-  if (!file_exists('configuration.php')){
-     $self = rtrim( dirname( $_SERVER['PHP_SELF'] ), '/\\' ) . '/';
-     header("Location: http://" . $_SERVER['HTTP_HOST'] . $self . "install.php" );
-     exit();
-  }
+	if (!file_exists('configuration.php')){
+		$self = rtrim( dirname( $_SERVER['PHP_SELF'] ), '/\\' ) . '/';
+		header("Location: http://" . $_SERVER['HTTP_HOST'] . $self . "install/index.php" );
+		exit();
+	}
 	
 	$message = 'Hello, XiNix World ! <br>';
 	$message .= 'Simple PHP Framework <br>';
@@ -88,10 +89,7 @@
 	$message .= '<a href="sample-login.php">Sample Login</a><br>';
 	$message .= '<a href="sample-register.php">Sample Register</a><br>';
 	$message .= '<a href="sample-protected-page.php">Sample Protected Page</a><br>';
-	
-	
-	
-	
+
 	// ****************************************************
 	
 	

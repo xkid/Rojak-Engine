@@ -1,27 +1,27 @@
 <?php
 
-	// Use this PHP File As your Development
+  // Use this PHP File As your Development
 
 	// ****************  Default include  ****************
 	
-		// include XiNix setting file
-		include('configuration.php');
+		// include XFW setting file
+		include('../configuration.php');
 		// include template engine
-		include_once('./includes/template/tbs_class.php');
+		include_once('../includes/template/tbs_class.php');
 		// include database engine
-		include('./includes/adodb/adodb.inc.php');
+		include('../includes/adodb/adodb.inc.php');
 		// require user access class
-		require_once('./includes/user/access.class.php');
-    
+		require_once('../includes/user/access.class.php');
+
 		// Declare User access class
-		if (file_exists('configuration.php')){
+		if (file_exists('../configuration.php')){
 		  $user = new flexibleAccess('', $settings);
-		}
+		} 
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('register.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
@@ -73,12 +73,43 @@
 	
 	// **************  Write Your Code Here  **************
 	
+	$User_Field_Name = 'User';
+	$Pass_Field_Name = 'Pass';
+	$Email_Field_Name   = 'Email';
 	
+	// Submit Button Link
+	$Submit_Link = 'register.php';
 	
+	$message = '<h2>Register Default Admin</h2>';
 	
-	
-	
-	
+	// Check User Name Input ?
+	if (!empty($_POST[$User_Field_Name]) and !empty($_POST[$Email_Field_Name]) and !empty($_POST[$Pass_Field_Name])){
+		// Yes
+
+		// The logic is simple. We need to provide an associative array, where keys are the field names and values are the values :)
+		$data = array(
+			'username' => $_POST[$User_Field_Name],
+			'email' => $_POST[$Email_Field_Name],
+			'password' => $_POST[$Pass_Field_Name],
+			'active' => 1
+		);
+
+		//The method returns the userID of the new user or 0 if the user is not added
+		$userID = $user->insertUser($data);
+
+		if ($userID==0){
+			//user is allready registered or something like that
+			$message .= 'User not registered';
+		}else{
+			$message .= 'User registered with user id '.$userID;
+			header("Location: ../index.php"); /* Redirect browser */
+			exit;
+		}
+		
+	}else{
+		$message .= 'Please key in required field.';
+	}
+
 	// ****************************************************
 	
 	
