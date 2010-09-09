@@ -52,6 +52,10 @@ a{
 	color:#fff;
 }
 
+ul{
+	list-style-image:url("../images/bullet_green.png");
+}
+
 li{
 	padding-bottom:10px;
 }
@@ -102,10 +106,12 @@ h2{
 
 .head{
 	cursor:pointer;
+	font-size:14px;
 }
 
 .info img{
 	margin-top:5px;
+	border:0px;
 }
 
 #footer{

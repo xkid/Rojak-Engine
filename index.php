@@ -79,16 +79,6 @@
 		header("Location: http://" . $_SERVER['HTTP_HOST'] . $self . "install/index.php" );
 		exit();
 	}
-	
-	$message = 'Hello, XiNix World ! <br>';
-	$message .= 'Simple PHP Framework <br>';
-	$message .= '- <strong><a href=\'http://www.tinybutstrong.com\'>TinyButStrong</a></strong><br>';
-	$message .= '- <strong><a href=\'http://adodb.sourceforge.net\'>ADODB for PHP</a></strong><br>';
-	$message .= '- <strong><a href=\'http://phpuserclass.com\'>PHP User Class</a></strong><br><br>';
-	$message .= 'Read the source code, this is simple example.<br>';
-	$message .= '<a href="sample-login.php">Sample Login</a><br>';
-	$message .= '<a href="sample-register.php">Sample Register</a><br>';
-	$message .= '<a href="sample-protected-page.php">Sample Protected Page</a><br>';
 
 	// ****************************************************
 	

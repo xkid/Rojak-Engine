@@ -37,8 +37,13 @@
 	  });
 	</script>
 	
+	<script type="text/javascript" src="./includes/js/shjs/sh_main.js"></script>
+	<script type="text/javascript" src="./includes/js/shjs/sh_html.js"></script>
+	<script type="text/javascript" src="./includes/js/shjs/sh_php.js"></script>
+	<link rel="stylesheet" type="text/css" href="./includes/css/shjs/sh_golden.css" />
+	
   </head>
-<body>
+<body onload="sh_highlightDocument();">
 
 <div id="container">
 	<div id="header">
@@ -62,41 +67,112 @@
 				<h3>Basic</h3>
 				<li>
 					<div class="head">Hello World</div>
-					<div class="info">Using TinyButStrong</div>
+					<div class="info">
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-00.jpg"><img src="./includes/images/hello-world-00.jpg" alt="Open Sample.php to your editor (Notepad++)" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-01.jpg"><img src="./includes/images/hello-world-01.jpg" alt="Define your designed template file (hello.html)" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-02.jpg"><img src="./includes/images/hello-world-02.jpg" alt="Write a Hello World code" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-03.jpg"><img src="./includes/images/hello-world-03.jpg" alt="Sample.php Save As ... " width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-04.jpg"><img src="./includes/images/hello-world-04.jpg" alt="Save As ... hello.php " width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-05.jpg"><img src="./includes/images/hello-world-05.jpg" alt="Open Sample.html to your editor (Notepad++)" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-06.jpg"><img src="./includes/images/hello-world-06.jpg" alt="Write a TinyButStrong Syntax under Body tag" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-07.jpg"><img src="./includes/images/hello-world-07.jpg" alt="Sample.html Save As ... " width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-08.jpg"><img src="./includes/images/hello-world-08.jpg" alt="Save As ... hello.html (early define in hello.php)" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-09.jpg"><img src="./includes/images/hello-world-09.jpg" alt="Navigate to hello.php" width="200px"/></a>&nbsp;
+						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-10.jpg"><img src="./includes/images/hello-world-10.jpg" alt="hello.php + hello.html = result now" width="200px"/></a>&nbsp;
+					</div>
 				</li>
 				<li>
 					<div class="head">TBS Template</div>
-					<div class="info">Using TinyButStrong</div>
+					<div class="info">
+						<br/>
+						Hello World Example is using a TinyButStrong PHP Template Engine to Merge hello.php and hello.html.<br/>
+						But now we going to build a pure TBS template.<br/>
+						<a rel="tbs" class="imagebox" href="./includes/images/tbs-00.jpg"><img src="./includes/images/tbs-00.jpg" alt="Save As ... tbs.php with this code" width="200px"/></a>&nbsp;
+<div class="head">tbs.php &lt;-- Click to copy code</div>
+<div class="info">
+<pre class="sh_php">
+&lt;?php
+
+	// include template engine
+	include_once('./includes/template/tbs_class.php');
+	
+	// New template engine object
+	$TBS =& new clsTinyButStrong;
+	
+	// Load Your HTML file
+	$TBS->LoadTemplate('tbs.html');    // <----- Place this script HTML
+	
+	// **************  Write Your Code Here  **************
+	
+	$message = "PHP Template Engine - TinyButStrong";
+	
+	$a = 1345;
+	$b = 2243;
+	$sum = $a + $b;
+
+	// ****************************************************
+
+	// Show result
+	$TBS->Show() ;
+	
+?&gt;
+</pre>
+</div>
+						<a rel="tbs" class="imagebox" href="./includes/images/tbs-01.jpg"><img src="./includes/images/tbs-01.jpg" alt="Save As ... tbs.html with this code" width="200px"/></a>&nbsp;
+<div class="head">tbs.html &lt;-- Click to copy code</div>
+<div class="info">
+<pre class="sh_html">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+  &lt;head&gt;
+	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
+	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+	
+  &lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt; &#91;var.message;]&lt;/h2&gt;
+Result: &#91;var.sum;]
+	
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+						<a rel="tbs" class="imagebox" href="./includes/images/tbs-02.jpg"><img src="./includes/images/tbs-02.jpg" alt="The Result Merge tbs.php + tbs.html" width="200px"/></a>&nbsp;
+
+					</div>
 				</li>
 				<li>
 					<div class="head">CSS Styling</div>
-					<div class="info">Using CSS</div>
+					<div class="info">Using CSS (coming soon)</div>
 				</li>
 				<li>
 					<div class="head">JQuery</div>
-					<div class="info">Using JQuery</div>
+					<div class="info">Using JQuery (coming soon)</div>
 				</li>
 				<h3>Advanced</h3>
 				<li>
 					<div class="head">MySQL Database</div>
-					<div class="info">Using ADODB</div>
+					<div class="info">Using ADODB (coming soon)</div>
 				</li>
 				<li>
 					<div class="head">User Control</div>
-					<div class="info">Using PhpUserClass</div>
+					<div class="info">Using PhpUserClass (coming soon)</div>
 				</li>
 				<h3>Misc</h3>
 				<li>
 					<div class="head">Javascript Syntax Highlight</div>
-					<div class="info">Using SHJS</div>
+					<div class="info">Using SHJS (coming soon)</div>
 				</li>
 				<li>
 					<div class="head">Mail Function</div>
-					<div class="info">Using PHPMailer</div>
+					<div class="info">Using PHPMailer (coming soon)</div>
 				</li>
 				<li>
 					<div class="head">Shopping Cart</div>
-					<div class="info">Using Javascript Shopping Cart</div>
+					<div class="info">Using Javascript Shopping Cart (coming soon)</div>
 				</li>
 			</ul>
 		</div>

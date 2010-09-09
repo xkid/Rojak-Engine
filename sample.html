@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+	<title>XiNix - XKID Framework 2010</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Fav Icon -->
+	<link href="./includes/images/happy.png" rel="icon" />
+	
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" media="screen" href="./includes/css/style.css" />
+	
+	<!-- JQuery -->
+	<link rel="stylesheet" type="text/css" media="screen" href="./includes/jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
+	<script type="text/javascript" src="./includes/jquery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./includes/jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
+	
+	<!-- JQuery FancyBox -->
+	<script type="text/javascript" src="./includes/jquery/plugin/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+	<script type="text/javascript" src="./includes/jquery/plugin/fancybox/jquery.fancybox-1.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="./includes/jquery/plugin/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+
+	<!-- Javascript -->
+	<script type="text/javascript">
+	  $(document).ready(function(){
+			$(".imagebox").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: true
+			});
+
+			$('.info').hide();
+			$('.head').click(function(){
+				$(this).next().slideToggle(300);
+			});
+	  });
+	</script>
+	
+  </head>
+<body>
+
+
+	
+
+</body>
+</html>
