@@ -29,7 +29,8 @@
 				'height'			: '75%',
 				'autoScale'			: true
 			});
-
+			
+			$('a.code-head').fancybox();
 			$('.info').hide();
 			$('.head').click(function(){
 				$(this).next().slideToggle(300);
@@ -37,9 +38,11 @@
 	  });
 	</script>
 	
+	<!-- syntax highlight script -->
 	<script type="text/javascript" src="./includes/js/shjs/sh_main.js"></script>
 	<script type="text/javascript" src="./includes/js/shjs/sh_html.js"></script>
 	<script type="text/javascript" src="./includes/js/shjs/sh_php.js"></script>
+	<script type="text/javascript" src="./includes/js/shjs/sh_css.js"></script>
 	<link rel="stylesheet" type="text/css" href="./includes/css/shjs/sh_golden.css" />
 	
   </head>
@@ -86,71 +89,52 @@
 					<div class="info">
 						<br/>
 						Hello World Example is using a TinyButStrong PHP Template Engine to Merge hello.php and hello.html.<br/>
-						But now we going to build a pure TBS template.<br/>
-						<a rel="tbs" class="imagebox" href="./includes/images/tbs-00.jpg"><img src="./includes/images/tbs-00.jpg" alt="Save As ... tbs.php with this code" width="200px"/></a>&nbsp;
-<div class="head">tbs.php &lt;-- Click to copy code</div>
-<div class="info">
-<pre class="sh_php">
-&lt;?php
-
-	// include template engine
-	include_once('./includes/template/tbs_class.php');
-	
-	// New template engine object
-	$TBS =& new clsTinyButStrong;
-	
-	// Load Your HTML file
-	$TBS->LoadTemplate('tbs.html');    // <----- Place this script HTML
-	
-	// **************  Write Your Code Here  **************
-	
-	$message = "PHP Template Engine - TinyButStrong";
-	
-	$a = 1345;
-	$b = 2243;
-	$sum = $a + $b;
-
-	// ****************************************************
-
-	// Show result
-	$TBS->Show() ;
-	
-?&gt;
-</pre>
-</div>
-						<a rel="tbs" class="imagebox" href="./includes/images/tbs-01.jpg"><img src="./includes/images/tbs-01.jpg" alt="Save As ... tbs.html with this code" width="200px"/></a>&nbsp;
-<div class="head">tbs.html &lt;-- Click to copy code</div>
-<div class="info">
-<pre class="sh_html">
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-
-  &lt;head&gt;
-	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
-	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-	
-  &lt;/head&gt;
-&lt;body&gt;
-
-&lt;h2&gt; &#91;var.message;]&lt;/h2&gt;
-Result: &#91;var.sum;]
-	
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-						<a rel="tbs" class="imagebox" href="./includes/images/tbs-02.jpg"><img src="./includes/images/tbs-02.jpg" alt="The Result Merge tbs.php + tbs.html" width="200px"/></a>&nbsp;
-
+						But now we going to build a pure TBS template.
+						<br/>
+						<br/>
+						<table>
+						<tr>
+						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-00.jpg"><img src="./includes/images/tbs-00.jpg" alt="Save As ... tbs.php with this code" width="200px"/></a>&nbsp;</td>
+						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-01.jpg"><img src="./includes/images/tbs-01.jpg" alt="Save As ... tbs.html with this code" width="200px"/></a>&nbsp;</td>
+						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-02.jpg"><img src="./includes/images/tbs-02.jpg" alt="The Result Merge tbs.php + tbs.html" width="200px"/></a>&nbsp;</td>
+						</tr>
+						<tr>
+						<td><a href="#tbs-php" class="code-head" >(Click to copy code) tbs.php </a></td>
+						<td><a href="#tbs-html" class="code-head" >(Click to copy code) tbs.html </a></td>
+						<td></td>
+						</tr>
+						</table>
 					</div>
 				</li>
 				<li>
 					<div class="head">CSS Styling</div>
-					<div class="info">Using CSS (coming soon)</div>
+					<div class="info">
+						<a rel="css" class="imagebox" href="./includes/images/css-00.jpg"><img src="./includes/images/css-00.jpg" alt="Save As .. css.html" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-01.jpg"><img src="./includes/images/css-01.jpg" alt="Container DIV is bracket var.message and var.sum" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-02.jpg"><img src="./includes/images/css-02.jpg" alt="Save As .. css.php" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-03.jpg"><img src="./includes/images/css-03.jpg" alt="Save As .. css.css" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-04.jpg"><img src="./includes/images/css-04.jpg" alt="Save to [root path]/includes/css" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-05.jpg"><img src="./includes/images/css-05.jpg" alt="Navigate to css.php" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-06.jpg"><img src="./includes/images/css-06.jpg" alt="Add code to css.css" width="200px"/></a>&nbsp;
+						<a rel="css" class="imagebox" href="./includes/images/css-07.jpg"><img src="./includes/images/css-07.jpg" alt="Final HTML code for css.php" width="200px"/></a>&nbsp;
+						<br/>
+						<br/><a href="#css-html" class="code-head" >(Click to copy code) css.html </a>
+						<br/><a href="#css-php" class="code-head" >(Click to copy code) css.php </a>
+						<br/><a href="#css-css" class="code-head" >(Click to copy code) css.css </a>
+						<br/><a href="#css-css2" class="code-head" >(Click to copy code) css.css - modified </a>
+					</div>
 				</li>
 				<li>
 					<div class="head">JQuery</div>
-					<div class="info">Using JQuery (coming soon)</div>
+					<div class="info">
+						<a rel="jquery" class="imagebox" href="./includes/images/jquery-00.jpg"><img src="./includes/images/jquery-00.jpg" alt="css.php Save As .. jquery.php" width="200px"/></a>&nbsp;
+						<a rel="jquery" class="imagebox" href="./includes/images/jquery-01.jpg"><img src="./includes/images/jquery-01.jpg" alt="css.html Save As .. jquery.html" width="200px"/></a>&nbsp;
+						<a rel="jquery" class="imagebox" href="./includes/images/jquery-02.jpg"><img src="./includes/images/jquery-02.jpg" alt="Navigate to jquery.php,click the H2 Title" width="200px"/></a>&nbsp;
+						<a rel="jquery" class="imagebox" href="./includes/images/jquery-03.jpg"><img src="./includes/images/jquery-03.jpg" alt="Result: 3588 will hide !" width="200px"/></a>&nbsp;
+						<br/>
+						<br/><a href="#jquery-html" class="code-head">(Click to copy code) jquery.html </a>
+						<br/><a href="#jquery-php" class="code-head">(Click to copy code) jquery.php </a>
+					</div>
 				</li>
 				<h3>Advanced</h3>
 				<li>
@@ -188,5 +172,239 @@ Result: &#91;var.sum;]
 		Designed By XKID &copy; 2008 - <span id="year"></span>
 	</div>
 </div>
+
+<div style="display:none">
+
+<!-- TBS HTML CODE -->
+<div id="tbs-html" class="code">
+<pre class="sh_html">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+  &lt;head&gt;
+	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
+	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+	
+  &lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt; &#91;var.message;]&lt;/h2&gt;
+Result: &#91;var.sum;]
+	
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<!-- TBS PHP CODE -->
+<div id="tbs-php" class="code">
+<pre class="sh_php">
+&lt;?php
+
+	// include template engine
+	include_once('./includes/template/tbs_class.php');
+	
+	// New template engine object
+	$TBS =&amp; new clsTinyButStrong;
+	
+	// Load Your HTML file
+	$TBS-&gt;LoadTemplate('tbs.html');    // &lt;----- Place this script HTML
+	
+	// **************  Write Your Code Here  **************
+	
+	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
+	
+	$a = 1345;
+	$b = 2243;
+	$sum = $a + $b;
+
+	// ****************************************************
+
+	// Show result
+	$TBS-&gt;Show() ;
+	
+?&gt;
+</pre>
+</div>
+
+<!-- CSS HTML CODE -->
+<div id="css-html" class="code">
+<pre class="sh_html">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+  &lt;head&gt;
+	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
+	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+	
+	&lt;!-- Style --&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/css/css.css&quot; /&gt;
+	
+  &lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+	&lt;h2&gt;&#91;var.message;]&lt;/h2&gt;
+	&lt;span&gt;Result: &#91;var.sum;]&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<!-- CSS PHP CODE -->
+<div id="css-php" class="code">
+<pre class="sh_php">
+&lt;?php
+
+	// include template engine
+	include_once('./includes/template/tbs_class.php');
+	
+	// New template engine object
+	$TBS =&amp; new clsTinyButStrong;
+	
+	// Load Your HTML file
+	$TBS-&gt;LoadTemplate('css.html');    // &lt;----- Place this script HTML
+	
+	// **************  Write Your Code Here  **************
+	
+	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
+	
+	$a = 1345;
+	$b = 2243;
+	$sum = $a + $b;
+
+	// ****************************************************
+
+	// Show result
+	$TBS-&gt;Show() ;
+	
+?&gt;
+</pre>
+</div>
+
+<!-- CSS CSS CODE -->
+<div id="css-css" class="code">
+<pre class="sh_css">
+body{
+	background:#111111;
+	font-family:tahoma;
+	font-size:12px;
+	color:white;
+	text-align: center;
+}
+
+#container{
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	width:970px;
+	background-color: #333;
+}
+</pre>
+</div>
+
+<!-- CSS CSS 2 CODE -->
+<div id="css-css2" class="code">
+<pre class="sh_css">
+body{
+	background:#111111;
+	font-family:tahoma;
+	font-size:12px;
+	color:white;
+	text-align: center;
+}
+
+#container{
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	width:970px;
+	background-color: #333;
+	padding:10px;
+	border:1px solid;
+}
+
+h2{
+	color:#0048df;
+}
+</pre>
+</div>
+
+<!-- JQUERY HTML CODE -->
+<div id="jquery-html" class="code">
+<pre class="sh_html">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+  &lt;head&gt;
+	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
+	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+	
+	&lt;!-- Style --&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/css/css.css&quot; /&gt;
+	
+	&lt;!-- JQuery --&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css&quot; /&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;./includes/jquery/js/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;./includes/jquery/js/jquery-ui-1.8.4.custom.min.js&quot;&gt;&lt;/script&gt;
+	
+	&lt;!-- Javascript --&gt;
+	&lt;script type=&quot;text/javascript&quot;&gt;
+	  $(document).ready(function(){
+			$('h2').click(function(){
+				$(this).next().slideToggle(300);
+			});
+	  });
+	&lt;/script&gt;
+	
+  &lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+	&lt;h2&gt;&#91;var.message;]&lt;/h2&gt;
+	&lt;span&gt;Result: &#91;var.sum;]&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<!-- JQUERY PHP CODE -->
+<div id="jquery-php" class="code">
+<pre class="sh_php">
+&lt;?php
+
+	// include template engine
+	include_once('./includes/template/tbs_class.php');
+	
+	// New template engine object
+	$TBS =&amp; new clsTinyButStrong;
+	
+	// Load Your HTML file
+	$TBS-&gt;LoadTemplate('jquery.html');    // &lt;----- Place this script HTML
+	
+	// **************  Write Your Code Here  **************
+	
+	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
+	
+	$a = 1345;
+	$b = 2243;
+	$sum = $a + $b;
+
+	// ****************************************************
+
+	// Show result
+	$TBS-&gt;Show() ;
+	
+?&gt;
+</pre>
+</div>
+
+</div>
+
 </body>
 </html>

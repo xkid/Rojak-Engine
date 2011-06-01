@@ -50,6 +50,7 @@ tr {
 
 a{
 	color:#fff;
+	text-decoration:none;
 }
 
 ul{
@@ -109,9 +110,19 @@ h2{
 	font-size:14px;
 }
 
+.info{
+	border: 1px solid;
+	width:850px;
+	padding:8px;
+}
+
 .info img{
 	margin-top:5px;
 	border:0px;
+}
+
+.code{
+	text-align:left;
 }
 
 #footer{
