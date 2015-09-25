@@ -1,410 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+	<head>
+	
+		<title>[onshow.title;strconv=no;noerr;]</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <head>
-	<title>XiNix - XKID Framework 2010</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
 	
-	<!-- Fav Icon -->
-	<link href="./includes/images/happy.png" rel="icon" />
-	
-	<!-- Style -->
-	<link rel="stylesheet" type="text/css" media="screen" href="./includes/css/style.css" />
-	
-	<!-- JQuery -->
-	<link rel="stylesheet" type="text/css" media="screen" href="./includes/jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css" />
-	<script type="text/javascript" src="./includes/jquery/js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="./includes/jquery/js/jquery-ui-1.8.4.custom.min.js"></script>
-	
-	<!-- JQuery FancyBox -->
-	<script type="text/javascript" src="./includes/jquery/plugin/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
-	<script type="text/javascript" src="./includes/jquery/plugin/fancybox/jquery.fancybox-1.3.1.js"></script>
-	<link rel="stylesheet" type="text/css" href="./includes/jquery/plugin/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
-
-	<!-- Javascript -->
-	<script type="text/javascript">
-	  $(document).ready(function(){
-			$(".imagebox").fancybox({
-				'width'				: '75%',
-				'height'			: '75%',
-				'autoScale'			: true
-			});
-			
-			$('a.code-head').fancybox();
-			$('.info').hide();
-			$('.head').click(function(){
-				$(this).next().slideToggle(300);
-			});
-	  });
-	</script>
-	
-	<!-- syntax highlight script -->
-	<script type="text/javascript" src="./includes/js/shjs/sh_main.js"></script>
-	<script type="text/javascript" src="./includes/js/shjs/sh_html.js"></script>
-	<script type="text/javascript" src="./includes/js/shjs/sh_php.js"></script>
-	<script type="text/javascript" src="./includes/js/shjs/sh_css.js"></script>
-	<link rel="stylesheet" type="text/css" href="./includes/css/shjs/sh_golden.css" />
-	
-  </head>
-<body onload="sh_highlightDocument();">
-
-<div id="container">
-	<div id="header">
-		<img class="imagebox" src="./includes/images/logo.png" alt="logo"/>
-	</div>
-	
-	<div id="content">
-		<h2>XiNix Framework Manual</h2>
-		<div id="message">
-			<!-- [var.message;htmlconv=no;noerr;] -->
-			<div class="head">Setup and Installation</div>
-			<div class="info">
-				<a rel="setup" class="imagebox" href="./includes/images/setup-00.jpg"><img src="./includes/images/setup-00.jpg" alt="Create an Empty Database" width="200px"/></a>&nbsp;
-				<a rel="setup" class="imagebox" href="./includes/images/setup-01.jpg"><img src="./includes/images/setup-01.jpg" alt="Fill in Database Connection Information" width="200px"/></a>&nbsp;
-				<a rel="setup" class="imagebox" href="./includes/images/setup-02.jpg"><img src="./includes/images/setup-02.jpg" alt="Register Admin User Account" width="200px"/></a>&nbsp;
-				<a rel="setup" class="imagebox" href="./includes/images/setup-03.jpg"><img src="./includes/images/setup-03.jpg" alt="Finish Setup !" width="200px"/></a>&nbsp;
-				<a rel="setup" class="imagebox" href="./includes/images/setup-04.jpg"><img src="./includes/images/setup-04.jpg" alt="Database Created Users Table" width="200px"/></a>&nbsp;
-				<a rel="setup" class="imagebox" href="./includes/images/setup-05.jpg"><img src="./includes/images/setup-05.jpg" alt="Users Table Insert admin account info" width="200px"/></a>&nbsp;
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Rojak Engine</h1>
+				<p>[onshow.message;strconv=no;noerr;]</p>
+				<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 			</div>
-			<ul>
-				<h3>Basic</h3>
-				<li>
-					<div class="head">Hello World</div>
-					<div class="info">
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-00.jpg"><img src="./includes/images/hello-world-00.jpg" alt="Open Sample.php to your editor (Notepad++)" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-01.jpg"><img src="./includes/images/hello-world-01.jpg" alt="Define your designed template file (hello.html)" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-02.jpg"><img src="./includes/images/hello-world-02.jpg" alt="Write a Hello World code" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-03.jpg"><img src="./includes/images/hello-world-03.jpg" alt="Sample.php Save As ... " width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-04.jpg"><img src="./includes/images/hello-world-04.jpg" alt="Save As ... hello.php " width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-05.jpg"><img src="./includes/images/hello-world-05.jpg" alt="Open Sample.html to your editor (Notepad++)" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-06.jpg"><img src="./includes/images/hello-world-06.jpg" alt="Write a TinyButStrong Syntax under Body tag" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-07.jpg"><img src="./includes/images/hello-world-07.jpg" alt="Sample.html Save As ... " width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-08.jpg"><img src="./includes/images/hello-world-08.jpg" alt="Save As ... hello.html (early define in hello.php)" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-09.jpg"><img src="./includes/images/hello-world-09.jpg" alt="Navigate to hello.php" width="200px"/></a>&nbsp;
-						<a rel="HelloWorld" class="imagebox" href="./includes/images/hello-world-10.jpg"><img src="./includes/images/hello-world-10.jpg" alt="hello.php + hello.html = result now" width="200px"/></a>&nbsp;
-					</div>
-				</li>
-				<li>
-					<div class="head">TBS Template</div>
-					<div class="info">
-						<br/>
-						Hello World Example is using a TinyButStrong PHP Template Engine to Merge hello.php and hello.html.<br/>
-						But now we going to build a pure TBS template.
-						<br/>
-						<br/>
-						<table>
-						<tr>
-						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-00.jpg"><img src="./includes/images/tbs-00.jpg" alt="Save As ... tbs.php with this code" width="200px"/></a>&nbsp;</td>
-						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-01.jpg"><img src="./includes/images/tbs-01.jpg" alt="Save As ... tbs.html with this code" width="200px"/></a>&nbsp;</td>
-						<td><a rel="tbs" class="imagebox" href="./includes/images/tbs-02.jpg"><img src="./includes/images/tbs-02.jpg" alt="The Result Merge tbs.php + tbs.html" width="200px"/></a>&nbsp;</td>
-						</tr>
-						<tr>
-						<td><a href="#tbs-php" class="code-head" >(Click to copy code) tbs.php </a></td>
-						<td><a href="#tbs-html" class="code-head" >(Click to copy code) tbs.html </a></td>
-						<td></td>
-						</tr>
-						</table>
-					</div>
-				</li>
-				<li>
-					<div class="head">CSS Styling</div>
-					<div class="info">
-						<a rel="css" class="imagebox" href="./includes/images/css-00.jpg"><img src="./includes/images/css-00.jpg" alt="Save As .. css.html" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-01.jpg"><img src="./includes/images/css-01.jpg" alt="Container DIV is bracket var.message and var.sum" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-02.jpg"><img src="./includes/images/css-02.jpg" alt="Save As .. css.php" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-03.jpg"><img src="./includes/images/css-03.jpg" alt="Save As .. css.css" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-04.jpg"><img src="./includes/images/css-04.jpg" alt="Save to [root path]/includes/css" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-05.jpg"><img src="./includes/images/css-05.jpg" alt="Navigate to css.php" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-06.jpg"><img src="./includes/images/css-06.jpg" alt="Add code to css.css" width="200px"/></a>&nbsp;
-						<a rel="css" class="imagebox" href="./includes/images/css-07.jpg"><img src="./includes/images/css-07.jpg" alt="Final HTML code for css.php" width="200px"/></a>&nbsp;
-						<br/>
-						<br/><a href="#css-html" class="code-head" >(Click to copy code) css.html </a>
-						<br/><a href="#css-php" class="code-head" >(Click to copy code) css.php </a>
-						<br/><a href="#css-css" class="code-head" >(Click to copy code) css.css </a>
-						<br/><a href="#css-css2" class="code-head" >(Click to copy code) css.css - modified </a>
-					</div>
-				</li>
-				<li>
-					<div class="head">JQuery</div>
-					<div class="info">
-						<a rel="jquery" class="imagebox" href="./includes/images/jquery-00.jpg"><img src="./includes/images/jquery-00.jpg" alt="css.php Save As .. jquery.php" width="200px"/></a>&nbsp;
-						<a rel="jquery" class="imagebox" href="./includes/images/jquery-01.jpg"><img src="./includes/images/jquery-01.jpg" alt="css.html Save As .. jquery.html" width="200px"/></a>&nbsp;
-						<a rel="jquery" class="imagebox" href="./includes/images/jquery-02.jpg"><img src="./includes/images/jquery-02.jpg" alt="Navigate to jquery.php,click the H2 Title" width="200px"/></a>&nbsp;
-						<a rel="jquery" class="imagebox" href="./includes/images/jquery-03.jpg"><img src="./includes/images/jquery-03.jpg" alt="Result: 3588 will hide !" width="200px"/></a>&nbsp;
-						<br/>
-						<br/><a href="#jquery-html" class="code-head">(Click to copy code) jquery.html </a>
-						<br/><a href="#jquery-php" class="code-head">(Click to copy code) jquery.php </a>
-					</div>
-				</li>
-				<h3>Advanced</h3>
-				<li>
-					<div class="head">MySQL Database</div>
-					<div class="info">Using ADODB (coming soon)</div>
-				</li>
-				<li>
-					<div class="head">User Control</div>
-					<div class="info">Using PhpUserClass (coming soon)</div>
-				</li>
-				<h3>Misc</h3>
-				<li>
-					<div class="head">Javascript Syntax Highlight</div>
-					<div class="info">Using SHJS (coming soon)</div>
-				</li>
-				<li>
-					<div class="head">Mail Function</div>
-					<div class="info">Using PHPMailer (coming soon)</div>
-				</li>
-				<li>
-					<div class="head">Shopping Cart</div>
-					<div class="info">Using Javascript Shopping Cart (coming soon)</div>
-				</li>
-			</ul>
 		</div>
-	</div>
-	
-	<div id="footer">
-		<!-- Footer Javascript -->
-		<script>
-			$(document).ready(function(){
-				$("#year").text((new Date).getFullYear());
-			});
-		</script>
-		Designed By XKID &copy; 2008 - <span id="year"></span>
-	</div>
-</div>
+		<br/>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12">
+					Advertisement 資訊<br/>
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- 234x60 Half Banner Classic Grey -->
+					<ins class="adsbygoogle"
+						 style="display:inline-block;width:234px;height:60px"
+						 data-ad-client="ca-pub-6575727990565052"
+						 data-ad-slot="8254398249"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
 
-<div style="display:none">
-
-<!-- TBS HTML CODE -->
-<div id="tbs-html" class="code">
-<pre class="sh_html">
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-
-  &lt;head&gt;
-	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
-	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-	
-  &lt;/head&gt;
-&lt;body&gt;
-
-&lt;h2&gt; &#91;var.message;]&lt;/h2&gt;
-Result: &#91;var.sum;]
-	
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-
-<!-- TBS PHP CODE -->
-<div id="tbs-php" class="code">
-<pre class="sh_php">
-&lt;?php
-
-	// include template engine
-	include_once('./includes/template/tbs_class.php');
-	
-	// New template engine object
-	$TBS =&amp; new clsTinyButStrong;
-	
-	// Load Your HTML file
-	$TBS-&gt;LoadTemplate('tbs.html');    // &lt;----- Place this script HTML
-	
-	// **************  Write Your Code Here  **************
-	
-	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
-	
-	$a = 1345;
-	$b = 2243;
-	$sum = $a + $b;
-
-	// ****************************************************
-
-	// Show result
-	$TBS-&gt;Show() ;
-	
-?&gt;
-</pre>
-</div>
-
-<!-- CSS HTML CODE -->
-<div id="css-html" class="code">
-<pre class="sh_html">
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-
-  &lt;head&gt;
-	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
-	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-	
-	&lt;!-- Style --&gt;
-	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/css/css.css&quot; /&gt;
-	
-  &lt;/head&gt;
-&lt;body&gt;
-
-&lt;div id=&quot;container&quot;&gt;
-	&lt;h2&gt;&#91;var.message;]&lt;/h2&gt;
-	&lt;span&gt;Result: &#91;var.sum;]&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-
-<!-- CSS PHP CODE -->
-<div id="css-php" class="code">
-<pre class="sh_php">
-&lt;?php
-
-	// include template engine
-	include_once('./includes/template/tbs_class.php');
-	
-	// New template engine object
-	$TBS =&amp; new clsTinyButStrong;
-	
-	// Load Your HTML file
-	$TBS-&gt;LoadTemplate('css.html');    // &lt;----- Place this script HTML
-	
-	// **************  Write Your Code Here  **************
-	
-	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
-	
-	$a = 1345;
-	$b = 2243;
-	$sum = $a + $b;
-
-	// ****************************************************
-
-	// Show result
-	$TBS-&gt;Show() ;
-	
-?&gt;
-</pre>
-</div>
-
-<!-- CSS CSS CODE -->
-<div id="css-css" class="code">
-<pre class="sh_css">
-body{
-	background:#111111;
-	font-family:tahoma;
-	font-size:12px;
-	color:white;
-	text-align: center;
-}
-
-#container{
-	text-align:left;
-	margin-left:auto;
-	margin-right:auto;
-	width:970px;
-	background-color: #333;
-}
-</pre>
-</div>
-
-<!-- CSS CSS 2 CODE -->
-<div id="css-css2" class="code">
-<pre class="sh_css">
-body{
-	background:#111111;
-	font-family:tahoma;
-	font-size:12px;
-	color:white;
-	text-align: center;
-}
-
-#container{
-	text-align:left;
-	margin-left:auto;
-	margin-right:auto;
-	width:970px;
-	background-color: #333;
-	padding:10px;
-	border:1px solid;
-}
-
-h2{
-	color:#0048df;
-}
-</pre>
-</div>
-
-<!-- JQUERY HTML CODE -->
-<div id="jquery-html" class="code">
-<pre class="sh_html">
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-
-  &lt;head&gt;
-	&lt;title&gt;XiNix - XKID Framework 2010&lt;/title&gt;
-	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-	
-	&lt;!-- Style --&gt;
-	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/css/css.css&quot; /&gt;
-	
-	&lt;!-- JQuery --&gt;
-	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;./includes/jquery/css/ui-darkness/jquery-ui-1.8.4.custom.css&quot; /&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;./includes/jquery/js/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;./includes/jquery/js/jquery-ui-1.8.4.custom.min.js&quot;&gt;&lt;/script&gt;
-	
-	&lt;!-- Javascript --&gt;
-	&lt;script type=&quot;text/javascript&quot;&gt;
-	  $(document).ready(function(){
-			$('h2').click(function(){
-				$(this).next().slideToggle(300);
-			});
-	  });
-	&lt;/script&gt;
-	
-  &lt;/head&gt;
-&lt;body&gt;
-
-&lt;div id=&quot;container&quot;&gt;
-	&lt;h2&gt;&#91;var.message;]&lt;/h2&gt;
-	&lt;span&gt;Result: &#91;var.sum;]&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-
-<!-- JQUERY PHP CODE -->
-<div id="jquery-php" class="code">
-<pre class="sh_php">
-&lt;?php
-
-	// include template engine
-	include_once('./includes/template/tbs_class.php');
-	
-	// New template engine object
-	$TBS =&amp; new clsTinyButStrong;
-	
-	// Load Your HTML file
-	$TBS-&gt;LoadTemplate('jquery.html');    // &lt;----- Place this script HTML
-	
-	// **************  Write Your Code Here  **************
-	
-	$message = &quot;PHP Template Engine - TinyButStrong&quot;;
-	
-	$a = 1345;
-	$b = 2243;
-	$sum = $a + $b;
-
-	// ****************************************************
-
-	// Show result
-	$TBS-&gt;Show() ;
-	
-?&gt;
-</pre>
-</div>
-
-</div>
-
-</body>
+		<!-- Latest compiled and minified Locales -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/locale/bootstrap-table-zh-CN.min.js"></script>
+		
+	</body>
 </html>
