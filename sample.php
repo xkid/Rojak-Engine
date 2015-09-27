@@ -4,19 +4,13 @@
   
 	// ****************  Default include  ****************
 	
-		// include Database setting file
-		include('database.php');
-		// include template engine
-		include_once('./includes/tbs/tbs_class.php');
-		// include database engine
-		include('./includes/adodb/adodb.inc.php');
-		// require HybridAuth class
-		require_once('./includes/hybridauth/Hybrid/Auth.php');
+		// include All file
+		include('all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('sample.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('views/sample.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
@@ -67,6 +61,8 @@
 	
 	$title = 'Rojak Engine';
 	$message = 'Mix and Match';
+	
+	
 	
 	// ****************************************************
 	

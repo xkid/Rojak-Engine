@@ -15,9 +15,6 @@
 */
 
 // Start of Database Install Script Configuration
-  
-	// install.php template file
-	$Template_HTML = 'index.html';
 
 	// HTML Form Field Name
 	$Host_Field_Name = 'Host';
@@ -26,8 +23,6 @@
 	$DB_Field_Name   = 'DB';
 
 // End of Database Install Script Configuration
-
-
 
 // Fixed Configuration
 
@@ -40,69 +35,73 @@
 
 // End of Fixed Configuration
 
-
-
 // **************************************************************************
 
+	// include All file.
+	include('../all.php');
 
-include_once('../includes/tbs/tbs_class.php');
-include("../includes/adodb/adodb-exceptions.inc.php"); 
-include('../includes/adodb/adodb.inc.php');
+	// Declare TinyButStrong class
+	$TBS =& new clsTinyButStrong;
 
-$TBS =& new clsTinyButStrong;
+	// Load HTML Template
+	$TBS->LoadTemplate('index.html');
 
-$TBS->LoadTemplate($Template_HTML);
+	// Page Title
+	$title = 'MySQL Setting Setup';
 
-$title = 'MySQL Setting Setup';
+	// Check it Form Inputs is Empty or not?
+	if (($_POST[$Host_Field_Name] != '') && ($_POST[$User_Field_Name] != '') && ($_POST[$DB_Field_Name] != '') && ($_POST[$Pass_Field_Name] != ''))
+	{
 
-if (($_POST[$Host_Field_Name] != '') && ($_POST[$User_Field_Name] != '') && ($_POST[$DB_Field_Name] != '') && ($_POST[$Pass_Field_Name] != ''))
-{
-
-	
-	// setup the database file info
-	$config = "<?php\n";
-	$config .= "\$R_Host = '". $_POST[$Host_Field_Name] ."';\n";
-	$config .= "\$R_User = '". $_POST[$User_Field_Name] ."';\n";
-	$config .= "\$R_Pass = '". $_POST[$Pass_Field_Name] ."';\n";
-	$config .= "\$R_DB = '". $_POST[$DB_Field_Name] ."';\n";
-	$config .= "\$R_Root = 'http://". $host ."/';\n";
-	
-	$config .= "?".">";
-	
-	// create configuration.php file
-	if ($fp = fopen("../database.php", "w")){
-		fputs( $fp, $config, strlen( $config ) );
-		fclose( $fp );
-	}
-	
-	// Try include database setting file
-	include('../database.php');
-
-	try { 
-
-		// Try Connect Database
-		$db = NewADOConnection('mysql');
-		$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+		// Write to database.php
+		$config = "<?php\n";
+		$config .= "\$R_Host = '". $_POST[$Host_Field_Name] ."';\n";
+		$config .= "\$R_User = '". $_POST[$User_Field_Name] ."';\n";
+		$config .= "\$R_Pass = '". $_POST[$Pass_Field_Name] ."';\n";
+		$config .= "\$R_DB = '". $_POST[$DB_Field_Name] ."';\n";
+		$config .= "\$R_Root = 'http://". $host ."/';\n";
+		$config .= "?".">";
 		
-		// Success
-		if ($db->ErrorMsg() == null){
-			$message = '<p class="alert alert-success">Success Connect Database Setting, <a href=../index.php>Back to Home</a></p>';
+		// create database.php file
+		if ($fp = fopen("../database.php", "w")){
+			// Puts the string inside database.php
+			fputs( $fp, $config, strlen( $config ) );
+			// Close the file.
+			fclose( $fp );
 		}
 
-	} catch (exception $e) { 
+		// Try include database.php again
+		include('../database.php');
 		
-		// Failed, Show Error Msg
-		$message = "<p class='alert alert-danger'>".$db->ErrorMsg()."</p>";
+		try { 
+
+			// Try Connect Database
+			$db = NewADOConnection('mysql');
+			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+			
+			// Success
+			if ($db->ErrorMsg() == null){
+				// Success, show success message
+				$message = '<p class="alert alert-success">Success Connect Database Setting, <a href=../index.php>Back to Home</a></p>';
+			}
+		
+		} catch (exception $e) { 
+			
+			// Failed, show error message
+			$message = "<p class='alert alert-danger'>".$db->ErrorMsg()."</p>";
+
+		}
+	
+	}else{
+
+		// Message
+		$message = '<p class="alert alert-info">Please set MySQL connection info.</p>';
 
 	}
 
-}else{
-
-	// Message
-	$message = '<p class="alert alert-info">Please set MySQL connection info.</p>';
-
-}
-
-$TBS->Show() ;
+// **************************************************************************
+	
+	// Show result;
+	$TBS->Show() ;
 
 ?>
