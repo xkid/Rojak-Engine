@@ -17,46 +17,48 @@
 	
 	// **************  Example Code Here  *****************
 	
-		 /*
-		 
-		 $saveLink = 'save.php';
-		 $cssLink = 'style.css';
-		 
-		 // Create database connection
-			 $db = NewADOConnection('mysql');
-			 $db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
-		 // ... please refer ./adodb/docs/
+		/*
 
-		 class xxxx{
+		// Create database connection
+			$db = NewADOConnection('mysql');
+			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+			// ... please refer ./adodb/docs/
+
+			class xxxx{
 				function yyyy(){
 					...
 				}
 				function zzzz(){
 					...
 				}
-		 }
+			}
 
-		 $AAAA = new xxxx;  // declare new object
-		 $AAAA->yyyy();	  // calling yyyy function
+			$AAAA = new xxxx;  // declare new object
+			$AAAA->yyyy();	  // calling yyyy function
+
+		// Create database connection
+			$db = NewADOConnection('mysql');
+			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+
+		// Form SQL Query
+			$sql="SELECT * FROM table where field01='$xxx' and field02='$yyy'";
+
+		// Get Database result
+			$result=$db->Execute($sql);
+			if ($result === false) die("Query Failed->".$db->ErrorMsg()); 
+
+		// Check Result record count
+			if (($result->RecordCount()) == 1)
+			{
+				... Please refer to ./includes/adodb/docs/
+			}
 		 
-		 // Create database connection
-		 $db = NewADOConnection('mysql');
-		 $db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
-		 
-		 // Form SQL Query
-		 $sql="SELECT * FROM table where field01='$xxx' and field02='$yyy'";
-		 
-		 // Get Database result
-		 $result=$db->Execute($sql);
-		 if ($result === false) die("Query Failed->".$db->ErrorMsg()); 
-		 
-		 // Check Result record count
-		 if (($result->RecordCount()) == 1)
-		 {
-				... Please refer to ./adodb/docs/
-		 }
-		 
-		 */
+		// SQLite connection
+			// Try Connect Database
+			$db = &ADONewConnection('pdo');
+			$db->PConnect('sqlite:sqlite.db');
+
+		*/
 	
 	// ****************************************************
 	

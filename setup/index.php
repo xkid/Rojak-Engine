@@ -77,12 +77,12 @@
 
 			// Try Connect Database
 			$db = NewADOConnection('mysql');
-			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+			$db->PConnect($R_Host, $R_User, $R_Pass, $R_DB);
 			
 			// Success
 			if ($db->ErrorMsg() == null){
 				// Success, show success message
-				$message = '<p class="alert alert-success">Success Connect Database Setting, <a href=../index.php>Back to Home</a></p>';
+				$message = '<p class="alert alert-success">Success Connect Database Setting, <a href="../index.php">Back to Home</a></p>';
 			}
 		
 		} catch (exception $e) { 
