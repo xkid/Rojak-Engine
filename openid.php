@@ -98,6 +98,10 @@
 		if ($user_profile != null){
 			$user_profile->logout();
 		}
+		// remove all session variables
+		session_unset();
+		// destroy the session 
+		session_destroy();
 	}
 	
 	// Display Login user email
