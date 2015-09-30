@@ -1,107 +1,75 @@
 <?php
 
-// Rojak Install Script
-// Rojak prepare a simple SQL install script
-// Install script will create File Named : database.php
-// Which is include:-
-/* 
-    <? php
-      $R_Host = 'localhost';
-      $R_User = 'root';
-      $R_Pass = '';
-      $R_DB = 'Rojak';
-      $R_Root = 'http://localhost/';
-    ? >
-*/
-
-// Start of Database Install Script Configuration
-
-	// HTML Form Field Name
-	$Host_Field_Name = 'Host';
-	$User_Field_Name = 'User';
-	$Pass_Field_Name = 'Pass';
-	$DB_Field_Name   = 'DB';
-
-// End of Database Install Script Configuration
-
-// Fixed Configuration
-
-	// Submit Button Link
-	$Submit_Link = 'index.php';
-
-	// Get Project Root
-	$host  = $_SERVER['HTTP_HOST'];
-	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-
-// End of Fixed Configuration
-
-// **************************************************************************
-
-	// include All file.
-	include('../all.php');
-
-	// Declare TinyButStrong class
-	$TBS =& new clsTinyButStrong;
-
-	// Load HTML Template
-	$TBS->LoadTemplate('index.html');
-
-	// Page Title
-	$title = 'MySQL Setting Setup';
-
-	// Check it Form Inputs is Empty or not?
-	if (($_POST[$Host_Field_Name] != '') && ($_POST[$User_Field_Name] != '') && ($_POST[$DB_Field_Name] != '') && ($_POST[$Pass_Field_Name] != ''))
-	{
-
-		// Write to database.php
-		$config = "<?php\n";
-		$config .= "\$R_Host = '". $_POST[$Host_Field_Name] ."';\n";
-		$config .= "\$R_User = '". $_POST[$User_Field_Name] ."';\n";
-		$config .= "\$R_Pass = '". $_POST[$Pass_Field_Name] ."';\n";
-		$config .= "\$R_DB = '". $_POST[$DB_Field_Name] ."';\n";
-		$config .= "\$R_Root = 'http://". $host ."/';\n";
-		$config .= "?".">";
+  // Use this PHP File As your Development
+  
+	// ****************  Default include  ****************
+	
+		// include All file
+		include('../all.php');
 		
-		// create database.php file
-		if ($fp = fopen("../database.php", "w")){
-			// Puts the string inside database.php
-			fputs( $fp, $config, strlen( $config ) );
-			// Close the file.
-			fclose( $fp );
-		}
+		// New template engine object
+		$TBS =& new clsTinyButStrong;
+		// Load Your HTML file
+		$TBS->LoadTemplate('index.html');    // <----- Place this script HTML
+	
+	// ****************************************************
+	
+	
+	// **************  Example Code Here  *****************
+	
+		/*
 
-		// Try include database.php again
-		include('../database.php');
-		
-		try { 
-
-			// Try Connect Database
+		// Create database connection
 			$db = NewADOConnection('mysql');
-			$db->PConnect($R_Host, $R_User, $R_Pass, $R_DB);
-			
-			// Success
-			if ($db->ErrorMsg() == null){
-				// Success, show success message
-				$message = '<p class="alert alert-success">Success Connect Database Setting, <a href="../index.php">Back to Home</a></p>';
+			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+			// ... please refer ./adodb/docs/
+
+			class xxxx{
+				function yyyy(){
+					...
+				}
+				function zzzz(){
+					...
+				}
 			}
-		
-		} catch (exception $e) { 
-			
-			// Failed, show error message
-			$message = "<p class='alert alert-danger'>".$db->ErrorMsg()."</p>";
 
-		}
+			$AAAA = new xxxx;  // declare new object
+			$AAAA->yyyy();	  // calling yyyy function
+
+		// Create database connection
+			$db = NewADOConnection('mysql');
+			$db->Connect($R_Host, $R_User, $R_Pass, $R_DB);
+
+		// Form SQL Query
+			$sql="SELECT * FROM table where field01='$xxx' and field02='$yyy'";
+
+		// Get Database result
+			$result=$db->Execute($sql);
+			if ($result === false) die("Query Failed->".$db->ErrorMsg()); 
+
+		// Check Result record count
+			if (($result->RecordCount()) == 1)
+			{
+				... Please refer to ./includes/adodb/docs/
+			}
+		 
+		// SQLite connection
+			// Try Connect Database
+			$db = &ADONewConnection('pdo');
+			$db->PConnect('sqlite:sqlite.db');
+
+		*/
 	
-	}else{
-
-		// Message
-		$message = '<p class="alert alert-info">Please set MySQL connection info.</p>';
-
-	}
-
-// **************************************************************************
+	// ****************************************************
 	
-	// Show result;
+	// **************  Write Your Code Here  **************
+	
+	$title = 'Rojak Engine';
+	$message = 'Simple Setup Wizard';
+	
+	// ****************************************************
+	
+	// Show result
 	$TBS->Show() ;
-
+	
 ?>

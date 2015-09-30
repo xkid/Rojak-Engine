@@ -79,10 +79,14 @@
 
 	$Submit_Link = 'hybridauth-config.php';
 
+	// Get Project Root
+	$host  = $_SERVER['HTTP_HOST'];
+	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), 'setup');
+	
 	$config = '<?php
 return
 		array(
-			"base_url" => "http://'.$_SERVER['HTTP_HOST'].'/includes/hybridauth/",
+			"base_url" => "http://'.$host.$uri.'includes/hybridauth/",
 			"providers" => array(
 				// openid providers
 				"OpenID" => array(

@@ -1,17 +1,10 @@
-<!--
-	
-	TinyButStrong Quick Code
-	
-	https://github.com/xkid/Rojak-Engine/wiki/TinyButStrong
-	
-	
- -->
+</html>
 <html>
 	<head>
 	
 		<title>[onshow.title;strconv=no;noerr;]</title>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+		<link rel="icon" href="../favicon.png" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
@@ -24,13 +17,39 @@
 	
 	</head>
 	<body>
-		<div class="container">
-			<p>[onshow.message;strconv=no;noerr;]</p>
-		</div>
-		<div class="container">
-			<a href="[onshow.login;strconv=no;noerr;]">Login</a> &nbsp; <a href="[onshow.logout;strconv=no;noerr;]">Logout</a>
+		<div class="jumbotron">
+			<div class="container">
+				<h1><img src="../favicon.png"/> Rojak Engine</h1>
+				<p>[onshow.message;strconv=no;noerr;]</p>
+				
+			</div>
 		</div>
 		
+		<div class="container" id="form">
+			<FORM action=[var.Submit_Link] method="post">
+			
+				<div class="form-group">
+					<label for="host">Database Host :</label>
+					<input name=[var.Host_Field_Name] class="form-control" id="host" placeholder="DB Host">
+				</div>
+				<div class="form-group">
+					<label for="pass">User Name :</label>
+					<input name=[var.User_Field_Name] class="form-control" id="user" placeholder="User Name">
+				</div>
+				<div class="form-group">
+					<label for="pass">Password :</label>
+					<input type="password" name=[var.Pass_Field_Name] class="form-control" id="pass" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<label for="db">Database Name :</label>
+					<input name=[var.DB_Field_Name] class="form-control" id="db" placeholder="DB Name">
+				</div>
+				<button type="submit" class="btn btn-default">Save Setting</button>
+			
+				
+			</FORM>
+		</div>
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Latest compiled and minified JavaScript -->

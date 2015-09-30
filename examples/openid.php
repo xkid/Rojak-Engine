@@ -5,12 +5,12 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('all.php');
+		include('../all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('views/openid.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('openid.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
@@ -83,7 +83,7 @@
 	$login = '?login=1';
 	 
 	// Init HybridAuth Class with config file
-	$ha = new Hybrid_Auth("config.php");
+	$ha = new Hybrid_Auth("../config.php");
 	
 	// If click Login
 	if (isset($_GET['login'])){
