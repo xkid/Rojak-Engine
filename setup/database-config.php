@@ -27,7 +27,7 @@
 // Fixed Configuration
 
 	// Submit Button Link
-	$Submit_Link = 'index.php';
+	$Submit_Link = 'database-config.php';
 
 	// Get Project Root
 	$host  = $_SERVER['HTTP_HOST'];

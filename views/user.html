@@ -1,0 +1,76 @@
+<!--
+	
+	TinyButStrong Quick Code
+	
+	https://github.com/xkid/Rojak-Engine/wiki/TinyButStrong
+	
+	
+ -->
+<html>
+	<head>
+	
+		<title>[onshow.title;strconv=no;noerr;]</title>
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+		<link rel="icon" href="favicon.png" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+	
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1><img src="favicon.png"/> Rojak Engine</h1>
+				<p>[onshow.message;strconv=no;noerr;]</p>
+			</div>
+		</div>
+		<div class="container">
+			<form action="" method="post">
+				<div class="form-group">
+					<label for="email">Email :</label>
+					<input name="email" class="form-control" id="email" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<label for="level">Level :</label>
+					<input name="level" class="form-control" id="level" placeholder="Level: 1,2,3,4,5">
+				</div>
+				<button type="submit" class="btn btn-default">Add User</button>
+			</form>
+			<table class="table table-bordered">
+				<tr>
+					<th>EMail</th><th>Level</th><th>Actions</th>
+				</tr>
+				<tr>
+					<td contenteditable="true">[blk1.email;block=tr]</td>
+					<td contenteditable="true">[blk1.level]</td>
+					<td>
+						<form action="?delete=1" method="post">
+							<input type="hidden" name="email" value="[blk1.email]">
+							<button type="submit" class="btn btn-default">Delete</button>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">[blk1;block=tr;nodata]No Data</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+
+		<!-- Latest compiled and minified Locales -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/locale/bootstrap-table-zh-CN.min.js"></script>
+		
+	</body>
+</html>
