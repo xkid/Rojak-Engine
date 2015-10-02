@@ -5,12 +5,12 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('all.php');
+		include('../all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('views/user.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('user.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
@@ -40,7 +40,7 @@
 		}
 		
 		function updateuser($email,$level){
-			$this->db->execute("update user set level='".$level."' where email='".$email."')");
+			$this->db->execute("update user set level='".$level."' where email='".$email."'");
 		}
 		
 		function deleteuser($email){
@@ -49,7 +49,18 @@
 		
 		function listuser(){
 			$rs=$this->db->execute("select * from user");
-			return $rs->GetArray();
+			$rs = $rs->GetArray();
+			
+			// Replace Array[k][0] for CSS ID
+			foreach ($rs as $k => $v){
+				foreach ($v as $k2 => $v2){
+					if ($k2 == 0){
+						$rs[$k][0] = "L_$k";
+					}
+				}
+			}
+			
+			return $rs;
 		}
 		
 	}
@@ -58,7 +69,7 @@
 	
 	if (isset($_GET['add'])){
 		if (isset($_POST['email']) && isset($_POST['level'])){
-			if (($_POST['email'] != '') && ($_POST['email'] != '')){
+			if (($_POST['email'] != '') && ($_POST['level'] != '')){
 				$user->adduser($_POST['email'],$_POST['level']);
 			}
 		}
@@ -66,7 +77,7 @@
 	
 	if (isset($_GET['update'])){
 		if (isset($_POST['email']) && isset($_POST['level'])){
-			if (($_POST['email'] != '') && ($_POST['email'] != '')){
+			if (($_POST['email'] != '') && ($_POST['level'] != '')){
 				$user->updateuser($_POST['email'],$_POST['level']);
 			}
 		}

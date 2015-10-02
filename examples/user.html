@@ -1,0 +1,146 @@
+<!--
+	
+	TinyButStrong Quick Code
+	
+	https://github.com/xkid/Rojak-Engine/wiki/TinyButStrong
+	
+	
+ -->
+<html>
+	<head>
+	
+		<title>[onshow.title;strconv=no;noerr;]</title>
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+		<link rel="icon" href="../favicon.png" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+	
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1><img src="../favicon.png"/> Rojak Engine</h1>
+				<p>[onshow.message;strconv=no;noerr;]</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="form-group">
+				<label for="email">Email :</label>
+				<input name="email" class="form-control" id="email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="level">Level :</label>
+				<input name="level" class="form-control" id="level" placeholder="Level: 1,2,3,4,5">
+			</div>
+			<a id="adduser" class="btn btn-default">Add User</a>
+		</div>
+		<br/>
+		<div class="container">
+			<table class="table table-bordered">
+				<tr>
+					<th>Email</th><th>Level</th><th>Actions</th>
+				</tr>
+				<tr>
+					<td id="email_[blk1.0]">[blk1.email;block=tr]</td>
+					<td id="level_[blk1.0]" contenteditable="true">[blk1.level]</td>
+					<td>
+						<a id="[blk1.0]" class="btn btn-default delete">Delete</a>
+						<a id="[blk1.0]" class="btn btn-default updatelevel">Update</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">[blk1;block=tr;nodata]No Data</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+
+		<!-- Latest compiled and minified Locales -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/locale/bootstrap-table-zh-CN.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				// Client Side Add Button Click
+				$('#adduser').on('click', function() {
+
+					// Get Email Key
+					email = $('#email').val();
+					// Get Updated Level Setting
+					level = $('#level').val();
+					// Form DataString for form POST
+					var dataString = 'email=' + email + '&level=' + level;
+
+					// Ajax Form Post
+					$.ajax({
+						type: 'post',
+						url: 'user.php?add=1',
+						data: dataString,
+						success: function(response) {
+							//alert("Add User Success!");
+							location.reload();
+						}
+					});
+					
+				});
+			
+				// Client Side Delete Button Click
+				$('.delete').on('click', function() {
+
+					// Get Email Key
+					email = $('#email_'+this.id).text();
+					// Form DataString for form POST
+					var dataString = 'email=' + email;
+
+					// Ajax Form Post
+					$.ajax({
+						type: 'post',
+						url: 'user.php?delete=1',
+						data: dataString,
+						success: function(response) {
+							//alert("Delete Success!");
+							location.reload();
+						}
+					});
+					
+				});
+			
+				// Client Side Update Button Click
+				$('.updatelevel').on('click', function() {
+
+					// Get Email Key
+					email = $('#email_'+this.id).text();
+					// Get Updated Level Setting
+					level = $('#level_'+this.id).text();
+					// Form DataString for form POST
+					var dataString = 'email=' + email + '&level=' + level;
+
+					// Ajax Form Post
+					$.ajax({
+						type: 'post',
+						url: 'user.php?update=1',
+						data: dataString,
+						success: function(response) {
+							alert("Update Success!");
+						}
+					});
+					
+				});
+			});
+		</script>
+		
+	</body>
+</html>
