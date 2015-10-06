@@ -5,7 +5,7 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('../all.php');
+		include_once('../all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
@@ -17,6 +17,7 @@
 	// **************  Write Your Code Here  **************
 	
 	$title = 'Rojak Engine Examples';
+	$message = 'Examples';
 	
 	// Scan All files in current directory
 	$links = scandir('./');

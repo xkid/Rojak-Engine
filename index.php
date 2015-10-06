@@ -5,7 +5,7 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('all.php');
+		include_once('all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
@@ -14,6 +14,15 @@
 	
 	// ****************************************************
 	
+	// **************  Write Your Code Here  **************
+
+	$title = 'Rojak Engine';
+	$message = 'Mix and Match ';
+	
+	// ****************************************************
+	
+	// Show result
+	$TBS->Show() ;
 	
 	// **************  Example Code Here  *****************
 	
@@ -61,24 +70,5 @@
 		*/
 	
 	// ****************************************************
-	
-	// **************  Write Your Code Here  **************
-	
-	// checks for database file, if none found loads installation page
-	/*
-	if (!file_exists('database.php')){
-		$self = rtrim( dirname( $_SERVER['PHP_SELF'] ), '/\\' ) . '/';
-		header("Location: http://" . $_SERVER['HTTP_HOST'] . $self . "install/index.php" );
-		exit();
-	}
-	*/
-	
-	$title = 'Rojak Engine';
-	$message = 'Mix and Match';
-	
-	// ****************************************************
-	
-	// Show result
-	$TBS->Show() ;
 	
 ?>

@@ -15,5 +15,8 @@
 		include(ROOT_PATH.'includes/adodb/adodb.inc.php');
 		// require HybridAuth class
 		require_once(ROOT_PATH.'includes/hybridauth/Hybrid/Auth.php');
+		
+		// Session Start
+		session_start();
 
 ?>

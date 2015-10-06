@@ -10,56 +10,30 @@
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
 		// Load Your HTML file
-		$TBS->LoadTemplate('openid.html');    // <----- Place this script HTML
+		$TBS->LoadTemplate('main.html');    // <----- Place this script HTML
 	
 	// ****************************************************
 	
 	// **************  Write Your Code Here  **************
 	
-	$title = 'Yahoo Open ID';
+	$title = 'Rojak Engine';
+	$message = 'Mix and Match';
 	
-	// Init HybridAuth Class with config file
-	$ha = new Hybrid_Auth("../config.php");
+	// Include user Class
+	include('user_class.php');
 	
-	// If click Login
-	if (isset($_GET['login'])){
-		// Authenticate with Yahoo! then grab the user profile
-		$adapter = $ha->authenticate("OpenID", array( "openid_identifier" => "http://me.yahoo.com/"));
-		$user_profile = $adapter->getUserProfile();
-		$_SESSION['member_email'] = $user_profile->email;
-		header('Location: '.$_SERVER['PHP_SELF']);
+	// Initial the class
+	$user = new user();
+
+	// Check the logged in email level
+	if (!$user->checkuser($_SESSION['member_email'],'1')){
+		// Goto Login Page
+		header('location: openid.php');
+		exit();
 	}
 	
-	// If click Logout
-	if (isset($_GET['logout'])){
-		// If Login previously
-		if ($user_profile != null){
-			$user_profile->logout();
-		}
-		// remove all session variables
-		session_unset();
-		// destroy the session 
-		session_destroy();
-		// Reload
-		header('Location: '.$_SERVER['PHP_SELF']);
-	}
-	
-	// Check Session member_email is null?
-	// If null mean not yet login!
-	if ($_SESSION['member_email'] == ''){
-		// Prepare Login and Logout button link
-		$login = '?login=1';
-	}else{
-		// Show User Management and Logout button
-		// magnet=a is kept as is when the field has a value, 
-		// and is deleted when the field is null or empty string.
-		$main = 'main.php';
-		$user = 'user.php';
-		$logout = '?logout=1';
-	}
-	
-	// Display Login user email
-	$message = $_SESSION['member_email'];
+	// Welcome logged in email
+	$message = 'Welcome home, '.$_SESSION['member_email'];
 	
 	// ****************************************************
 	

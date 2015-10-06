@@ -5,7 +5,7 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('all.php');
+		include_once('all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
@@ -14,6 +14,15 @@
 	
 	// ****************************************************
 	
+	// **************  Write Your Code Here  **************
+	
+	$title = 'Rojak Engine';
+	$message = 'Mix and Match';
+	
+	// ****************************************************
+	
+	// Show result
+	$TBS->Show() ;
 	
 	// **************  Example Code Here  *****************
 	
@@ -71,15 +80,5 @@
 		*/
 	
 	// ****************************************************
-	
-	// **************  Write Your Code Here  **************
-	
-	$title = 'Rojak Engine';
-	$message = 'Mix and Match';
-	
-	// ****************************************************
-	
-	// Show result
-	$TBS->Show() ;
 	
 ?>

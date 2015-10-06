@@ -5,7 +5,7 @@
 	// ****************  Default include  ****************
 	
 		// include All file
-		include('../all.php');
+		include_once('../all.php');
 		
 		// New template engine object
 		$TBS =& new clsTinyButStrong;
@@ -19,52 +19,9 @@
 	$title = 'Rojak Engine';
 	$message = 'User Control';
 	
-	class user{
-
-		var $db;
+	include('user_class.php');
 	
-		function __construct() {
-			
-			if (file_exists('user')){
-				$this->db = &ADONewConnection('pdo');
-				$this->db->Connect('sqlite:user');
-			}else{
-				$this->db = &ADONewConnection('pdo');
-				$this->db->Connect('sqlite:user');
-				$this->db->execute("create table user(email,level)");
-			}
-		}
-		
-		function adduser($email,$level){
-			$this->db->execute("insert into user(email,level) values ('".$email."','".$level."')");
-		}
-		
-		function updateuser($email,$level){
-			$this->db->execute("update user set level='".$level."' where email='".$email."'");
-		}
-		
-		function deleteuser($email){
-			$this->db->execute("delete from user where email='".$email."'");
-		}
-		
-		function listuser(){
-			$rs=$this->db->execute("select * from user");
-			$rs = $rs->GetArray();
-			
-			// Replace Array[k][0] for CSS ID
-			foreach ($rs as $k => $v){
-				foreach ($v as $k2 => $v2){
-					if ($k2 == 0){
-						$rs[$k][0] = "L_$k";
-					}
-				}
-			}
-			
-			return $rs;
-		}
-		
-	}
-	
+	// Declare User Class
 	$user = new user();
 	
 	if (isset($_GET['add'])){
@@ -91,9 +48,23 @@
 		}
 	}
 	
-	$TBS->MergeBlock('blk1',$user->listuser());
+	$rs = $user->listuser();
+	
+	// Replace Array[k][0] for CSS ID
+	foreach ($rs as $k => $v){
+		foreach ($v as $k2 => $v2){
+			if ($k2 == 0){
+				$rs[$k][0] = "L_$k";
+			}
+		}
+	}
+	
+	$TBS->MergeBlock('blk1',$rs);
 	
 	// ****************************************************
+	
+	// Show result
+	$TBS->Show() ;
 	
 	// **************  Example Code Here  *****************
 	
@@ -151,8 +122,5 @@
 		*/
 	
 	// ****************************************************
-	
-	// Show result
-	$TBS->Show() ;
 	
 ?>
