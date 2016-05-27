@@ -8,7 +8,7 @@
 		include_once('../all.php');
 		
 		// New template engine object
-		$TBS =& new clsTinyButStrong;
+		$TBS = new clsTinyButStrong;
 		// Load Your HTML file
 		$TBS->LoadTemplate('main.html');    // <----- Place this script HTML
 	

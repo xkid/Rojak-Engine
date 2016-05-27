@@ -41,7 +41,7 @@
 	include('../all.php');
 
 	// Declare TinyButStrong class
-	$TBS =& new clsTinyButStrong;
+	$TBS = new clsTinyButStrong;
 
 	// Load HTML Template
 	$TBS->LoadTemplate('database-config.html');
